@@ -186,7 +186,8 @@ function updateRanking(stage) {
                 </div>
             </div>
         </div>
-    `).join('');
+    `;
+    }).join('');
 }
 
 function renderRanking() {
