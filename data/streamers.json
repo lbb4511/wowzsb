@@ -1,0 +1,92 @@
+[
+  {
+    "id": "xiayike",
+    "name": "夏一可",
+    "role": "组织者 / 解说",
+    "avatar": "夏",
+    "tags": ["组织者", "毒舌解说"],
+    "platforms": [
+      { "name": "B站", "url": "https://live.bilibili.com/" },
+      { "name": "斗鱼", "url": "https://www.douyu.com/" }
+    ],
+    "isLive": false
+  },
+  {
+    "id": "linxiongmao",
+    "name": "林熊猫",
+    "role": "DPS / 内鬼候选人",
+    "avatar": "林",
+    "tags": ["-70智商", "输出不如T"],
+    "platforms": [
+      { "name": "B站", "url": "https://live.bilibili.com/" },
+      { "name": "虎牙", "url": "https://www.huya.com/" }
+    ],
+    "isLive": false
+  },
+  {
+    "id": "laoa",
+    "name": "牢A",
+    "role": "故事会主讲人",
+    "avatar": "A",
+    "tags": ["古神低语", "40智商"],
+    "platforms": [
+      { "name": "B站", "url": "https://live.bilibili.com/" }
+    ],
+    "isLive": false
+  },
+  {
+    "id": "aluo",
+    "name": "阿落",
+    "role": "DPS",
+    "avatar": "落",
+    "tags": ["喷大团", "40智商"],
+    "platforms": [
+      { "name": "B站", "url": "https://live.bilibili.com/" }
+    ],
+    "isLive": false
+  },
+  {
+    "id": "fule",
+    "name": "福乐",
+    "role": "社交达人",
+    "avatar": "福",
+    "tags": ["喊妈妈", "求灌注"],
+    "platforms": [
+      { "name": "B站", "url": "https://live.bilibili.com/" }
+    ],
+    "isLive": false
+  },
+  {
+    "id": "cangtiange",
+    "name": "苍天哥",
+    "role": "资深玩家",
+    "avatar": "苍",
+    "tags": ["魔兽老资历", "稳健"],
+    "platforms": [
+      { "name": "B站", "url": "https://live.bilibili.com/" }
+    ],
+    "isLive": false
+  },
+  {
+    "id": "anleier",
+    "name": "安蕾尔",
+    "role": "治疗",
+    "avatar": "安",
+    "tags": ["治疗担当", "魔兽老资历"],
+    "platforms": [
+      { "name": "B站", "url": "https://live.bilibili.com/" }
+    ],
+    "isLive": false
+  },
+  {
+    "id": "shenyi",
+    "name": "沈逸",
+    "role": "跨界嘉宾",
+    "avatar": "沈",
+    "tags": ["社会学教授", "跨界"],
+    "platforms": [
+      { "name": "B站", "url": "https://live.bilibili.com/" }
+    ],
+    "isLive": false
+  }
+]

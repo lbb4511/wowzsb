@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>数据管理后台 - 魔兽智商杯</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="bg-decoration"></div>
+
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="nav-logo-icon">🧠</div>
+                <span>魔兽智商杯</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">返回主站</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="admin-page">
+        <div class="container">
+            <div class="admin-header">
+                <h1 class="admin-title">📊 数据管理后台</h1>
+                <p class="admin-subtitle">管理网站数据，编辑后导出 JSON 替换到 data/ 目录</p>
+            </div>
+
+            <!-- 操作栏 -->
+            <div class="admin-toolbar">
+                <div class="admin-tabs" id="adminTabs"></div>
+                <div class="admin-actions">
+                    <button class="btn btn-sm btn-secondary" onclick="adminApp.exportData()">📥 导出 JSON</button>
+                    <label class="btn btn-sm btn-secondary" style="cursor:pointer">
+                        📤 导入 JSON
+                        <input type="file" id="importFile" accept=".json" style="display:none" onchange="adminApp.importData(this)">
+                    </label>
+                    <button class="btn btn-sm btn-secondary" onclick="adminApp.resetAll()">🔄 重置默认</button>
+                    <button class="btn btn-sm btn-primary" onclick="adminApp.addItem()">➕ 新增数据</button>
+                </div>
+            </div>
+
+            <!-- 数据表格 -->
+            <div class="admin-table-wrap">
+                <div class="admin-loading" id="adminLoading">正在加载数据...</div>
+                <div id="adminTableContainer"></div>
+            </div>
+
+            <!-- 提示信息 -->
+            <div class="admin-tips">
+                <div class="tip-card">
+                    <h4>💡 使用说明</h4>
+                    <ol>
+                        <li>编辑数据后，数据会自动保存到浏览器 localStorage</li>
+                        <li>点击「导出 JSON」下载所有数据文件</li>
+                        <li>将下载的 JSON 文件替换到项目的 <code>data/</code> 目录</li>
+                        <li>提交 GitHub 后，网站将更新为新数据</li>
+                        <li>点击「重置默认」可清除所有编辑，恢复初始数据</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 编辑弹窗 -->
+    <div class="admin-modal" id="editModal">
+        <div class="admin-modal-overlay" onclick="adminApp.closeModal()"></div>
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h3 id="modalTitle">编辑数据</h3>
+                <button class="admin-modal-close" onclick="adminApp.closeModal()">✕</button>
+            </div>
+            <div class="admin-modal-body" id="modalBody"></div>
+            <div class="admin-modal-footer">
+                <button class="btn btn-secondary" onclick="adminApp.closeModal()">取消</button>
+                <button class="btn btn-primary" onclick="adminApp.saveItem()">保存</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 消息提示 -->
+    <div class="admin-toast" id="adminToast"></div>
+
+    <script src="js/data-loader.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

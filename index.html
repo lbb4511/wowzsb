@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>魔兽智商杯 - 夏一可组织的欢乐团本</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="bg-decoration"></div>
+
+    <!-- 导航 -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" onclick="showPage('home')">
+                <div class="nav-logo-icon">🧠</div>
+                <span>魔兽智商杯</span>
+            </a>
+            <div class="nav-links">
+                <button class="nav-link active" data-page="home" onclick="showPage('home')">首页</button>
+                <button class="nav-link" data-page="streamers" onclick="showPage('streamers')">主播阵容</button>
+                <button class="nav-link" data-page="schedule" onclick="showPage('schedule')">直播预告</button>
+                <button class="nav-link" data-page="clips" onclick="showPage('clips')">切片集锦</button>
+                <button class="nav-link" data-page="ranking" onclick="showPage('ranking')">智商榜</button>
+            </div>
+            <button class="nav-mobile-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </nav>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="nav-link active" data-page="home" onclick="navigateTo('home')">首页</button>
+        <button class="nav-link" data-page="streamers" onclick="navigateTo('streamers')">主播阵容</button>
+        <button class="nav-link" data-page="schedule" onclick="navigateTo('schedule')">直播预告</button>
+        <button class="nav-link" data-page="clips" onclick="navigateTo('clips')">切片集锦</button>
+        <button class="nav-link" data-page="ranking" onclick="navigateTo('ranking')">智商榜</button>
+    </div>
+
+    <!-- 首页 -->
+    <div class="page active" id="page-home">
+        <div class="container">
+            <section class="hero">
+                <div class="hero-badge">
+                    <span>🎮</span>
+                    <span>夏一可组织的欢乐团本开荒节目</span>
+                </div>
+                <h1 class="hero-title">魔兽智商杯</h1>
+                <p class="hero-desc">
+                    全员自带智商值，犯错扣智商，智商最低三人接受"开庭"惩罚。
+                    每周日晚8点，欢乐抓内鬼！
+                </p>
+                <div class="hero-actions">
+                    <a href="#" class="btn btn-primary" onclick="showPage('schedule')">
+                        <span>📅</span>
+                        <span>查看直播预告</span>
+                    </a>
+                    <a href="#" class="btn btn-secondary" onclick="showPage('clips')">
+                        <span>🎬</span>
+                        <span>浏览切片集锦</span>
+                    </a>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">12+</div>
+                        <div class="hero-stat-label">参与主播</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">50+</div>
+                        <div class="hero-stat-label">精彩切片</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">∞</div>
+                        <div class="hero-stat-label">欢乐时刻</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 直播预告横幅 -->
+            <section class="live-banner">
+                <div class="live-banner-content">
+                    <div class="live-banner-info">
+                        <h3>🔥 下期直播预告</h3>
+                        <p>虚影尖塔 H5 开荒 | 每周日晚 20:00</p>
+                    </div>
+                    <div class="live-banner-countdown" id="countdown">
+                        <div class="countdown-item">
+                            <span class="num" id="cd-days">--</span>
+                            <span class="label">天</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="num" id="cd-hours">--</span>
+                            <span class="label">时</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="num" id="cd-minutes">--</span>
+                            <span class="label">分</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="num" id="cd-seconds">--</span>
+                            <span class="label">秒</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 最新战报 -->
+            <section style="margin-bottom: 40px;">
+                <h2 class="section-title">
+                    <span class="icon">📰</span>
+                    <span>最新战报</span>
+                </h2>
+                <p class="section-subtitle">智商杯近期精彩瞬间</p>
+                <div class="news-grid" id="newsGrid"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 主播阵容 -->
+    <div class="page" id="page-streamers">
+        <div class="container">
+            <section style="padding: 20px 0 40px;">
+                <h2 class="section-title">
+                    <span class="icon">🎭</span>
+                    <span>主播阵容</span>
+                </h2>
+                <p class="section-subtitle">参与智商杯开荒的欢乐主播们</p>
+                <div class="streamers-grid" id="streamersGrid"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 直播预告 -->
+    <div class="page" id="page-schedule">
+        <div class="container">
+            <section style="padding: 20px 0 40px;">
+                <h2 class="section-title">
+                    <span class="icon">📅</span>
+                    <span>直播预告</span>
+                </h2>
+                <p class="section-subtitle"> upcoming 直播安排，准时来抓内鬼</p>
+                <div class="schedule-list" id="scheduleList"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 切片集锦 -->
+    <div class="page" id="page-clips">
+        <div class="container">
+            <section style="padding: 20px 0 40px;">
+                <h2 class="section-title">
+                    <span class="icon">🎬</span>
+                    <span>切片集锦</span>
+                </h2>
+                <p class="section-subtitle">各大平台精彩直播切片，欢乐不断</p>
+                <div class="clips-grid" id="clipsGrid"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 智商排行榜 -->
+    <div class="page" id="page-ranking">
+        <div class="container">
+            <section style="padding: 20px 0 40px;">
+                <h2 class="section-title">
+                    <span class="icon">🏆</span>
+                    <span>智商排行榜</span>
+                </h2>
+                <p class="section-subtitle">实时智商分数，看谁最先"归零"</p>
+                <div class="ranking-tabs" id="rankingTabs"></div>
+                <div class="ranking-list" id="rankingList"></div>
+            </section>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a onclick="showPage('home')">首页</a>
+            <a onclick="showPage('streamers')">主播阵容</a>
+            <a onclick="showPage('schedule')">直播预告</a>
+            <a onclick="showPage('clips')">切片集锦</a>
+            <a onclick="showPage('ranking')">智商榜</a>
+            <a href="admin.html">🛠 管理后台</a>
+        </div>
+        <p>魔兽智商杯 - 夏一可组织的欢乐团本开荒节目</p>
+        <p style="margin-top: 8px; opacity: 0.6;">本网站为粉丝聚合站，数据仅供参考</p>
+    </footer>
+
+    <script src="js/data-loader.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

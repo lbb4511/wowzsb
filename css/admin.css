@@ -1,0 +1,651 @@
+/* ========== 管理后台样式 ========== */
+
+.admin-page {
+    padding-top: 80px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+}
+
+.admin-header {
+    padding: 20px 0 24px;
+    text-align: center;
+}
+
+.admin-title {
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+
+.admin-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* 工具栏 */
+.admin-toolbar {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.admin-tab {
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-card-hover);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+.admin-tab:hover {
+    border-color: var(--primary);
+    color: var(--text);
+}
+
+.admin-tab.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.admin-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* 表格 */
+.admin-table-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    min-height: 200px;
+}
+
+.admin-loading {
+    padding: 60px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    word-break: break-word;
+}
+
+.admin-table th {
+    background: var(--bg-card-hover);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.admin-table tr:hover td {
+    background: rgba(255, 107, 53, 0.03);
+}
+
+.admin-table td {
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.admin-table td .truncated {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.admin-table-actions {
+    display: flex;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+.admin-btn-icon {
+    padding: 6px 10px;
+    border-radius: 6px;
+    background: var(--bg-card-hover);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.8rem;
+}
+
+.admin-btn-icon:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.admin-btn-icon.danger:hover {
+    background: var(--danger);
+    border-color: var(--danger);
+}
+
+/* 弹窗 */
+.admin-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10000;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-modal.open {
+    display: flex;
+}
+
+.admin-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.admin-modal-content {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    width: 90%;
+    max-width: 640px;
+    max-height: 85vh;
+    overflow-y: auto;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.admin-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.admin-modal-header h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.admin-modal-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px;
+    transition: var(--transition);
+}
+
+.admin-modal-close:hover {
+    color: var(--danger);
+}
+
+.admin-modal-body {
+    padding: 24px;
+}
+
+.admin-modal-footer {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+}
+
+/* 表单 */
+.admin-form-group {
+    margin-bottom: 16px;
+}
+
+.admin-form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.admin-form-group input,
+.admin-form-group textarea,
+.admin-form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    outline: none;
+}
+
+.admin-form-group input:focus,
+.admin-form-group textarea:focus,
+.admin-form-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+}
+
+.admin-form-group textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+.admin-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.admin-form-help {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* 数组字段 */
+.admin-array-item {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.admin-array-item input {
+    flex: 1;
+}
+
+.admin-array-btn {
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-card-hover);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.admin-array-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+/* 提示卡片 */
+.admin-tips {
+    margin-top: 24px;
+}
+
+.tip-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+}
+
+.tip-card h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--accent);
+}
+
+.tip-card ol {
+    padding-left: 20px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.tip-card code {
+    background: var(--bg-card-hover);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: var(--primary);
+}
+
+/* Toast */
+.admin-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 24px;
+    font-weight: 500;
+    z-index: 10001;
+    opacity: 0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.admin-toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+.admin-toast.success {
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.admin-toast.error {
+    border-color: var(--danger);
+    color: var(--danger);
+}
+
+/* 空状态 */
+.admin-empty {
+    padding: 60px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.admin-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+/* 搜索框 */
+.admin-search {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.95rem;
+    margin-bottom: 16px;
+    outline: none;
+}
+
+.admin-search:focus {
+    border-color: var(--primary);
+}
+
+/* ========== 搜索覆盖层样式（主站） ========== */
+.search-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    background: rgba(15, 15, 26, 0.95);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 20px 40px;
+}
+
+.search-overlay.open {
+    display: flex;
+}
+
+.search-box {
+    width: 100%;
+    max-width: 640px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 14px 20px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 1.1rem;
+    outline: none;
+    transition: var(--transition);
+}
+
+.search-box input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+}
+
+.search-close {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-close:hover {
+    background: var(--danger);
+    color: white;
+    border-color: var(--danger);
+}
+
+.search-results {
+    width: 100%;
+    max-width: 640px;
+    margin-top: 24px;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+.search-hint {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 40px;
+    font-size: 1rem;
+}
+
+.search-result-item {
+    display: flex;
+    gap: 16px;
+    padding: 16px;
+    border-radius: var(--radius-sm);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    align-items: flex-start;
+}
+
+.search-result-item:hover {
+    border-color: var(--primary);
+    transform: translateX(4px);
+}
+
+.search-result-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.search-result-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.search-result-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.search-result-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.search-result-type {
+    font-size: 0.75rem;
+    color: var(--primary);
+}
+
+.search-result-item mark {
+    background: rgba(255, 107, 53, 0.3);
+    color: var(--text);
+    padding: 0 2px;
+    border-radius: 2px;
+}
+
+/* ========== 亮模式 ========== */
+.light-mode {
+    --bg: #F5F5F7;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F0F0F5;
+    --text: #1A1A2E;
+    --text-muted: #6B6B8A;
+    --border: #E0E0E8;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --shadow-lg: 0 10px 40px rgba(0,0,0,0.12);
+}
+
+.light-mode .search-overlay {
+    background: rgba(245, 245, 247, 0.95);
+}
+
+.light-mode .search-result-item:hover {
+    background: var(--bg-card-hover);
+}
+
+/* ========== 响应式 ========== */
+@media (max-width: 768px) {
+    .admin-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .admin-tabs {
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+
+    .admin-actions {
+        justify-content: center;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+
+    .admin-table td .truncated {
+        max-width: 150px;
+    }
+
+    .admin-form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-modal-content {
+        width: 95%;
+        max-height: 90vh;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+
+    .search-close {
+        width: 100%;
+        height: 44px;
+    }
+}
+
+/* 分页 */
+.admin-pagination {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    padding: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.admin-page-btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: var(--bg-card-hover);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.85rem;
+}
+
+.admin-page-btn:hover,
+.admin-page-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.admin-page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}

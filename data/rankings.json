@@ -1,0 +1,32 @@
+{
+  "H4-双龙": [
+    { "rank": 1, "name": "夏一可", "score": 200, "change": 0, "detail": "组织者，稳定发挥" },
+    { "rank": 2, "name": "苍天哥", "score": 180, "change": -10, "detail": "老资历，稳健" },
+    { "rank": 3, "name": "安蕾尔", "score": 170, "change": -20, "detail": "治疗压力大" },
+    { "rank": 4, "name": "福乐", "score": 120, "change": -30, "detail": "社交达人，偶尔犯错" },
+    { "rank": 5, "name": "沈逸", "score": 100, "change": -40, "detail": "跨界嘉宾，还在学习" },
+    { "rank": 6, "name": "阿落", "score": 40, "change": -60, "detail": "喷大团导致团灭" },
+    { "rank": 7, "name": "牢A", "score": 40, "change": -60, "detail": "喷大团+故事会" },
+    { "rank": 8, "name": "林熊猫", "score": -70, "change": -170, "detail": "输出不如T，每次都躺" }
+  ],
+  "H3-虚影": [
+    { "rank": 1, "name": "夏一可", "score": 200, "change": 0, "detail": "组织者" },
+    { "rank": 2, "name": "苍天哥", "score": 190, "change": -5, "detail": "稳定" },
+    { "rank": 3, "name": "安蕾尔", "score": 190, "change": -10, "detail": "治疗MVP" },
+    { "rank": 4, "name": "福乐", "score": 150, "change": -20, "detail": "偶尔犯错" },
+    { "rank": 5, "name": "沈逸", "score": 140, "change": -30, "detail": "进步明显" },
+    { "rank": 6, "name": "阿落", "score": 100, "change": -40, "detail": "DPS一般" },
+    { "rank": 7, "name": "牢A", "score": 100, "change": -50, "detail": "故事会开始" },
+    { "rank": 8, "name": "林熊猫", "score": 100, "change": -60, "detail": "开始下滑" }
+  ],
+  "H2-尖塔": [
+    { "rank": 1, "name": "夏一可", "score": 200, "change": 0, "detail": "组织者" },
+    { "rank": 2, "name": "苍天哥", "score": 195, "change": -5, "detail": "稳定" },
+    { "rank": 3, "name": "安蕾尔", "score": 200, "change": 0, "detail": "满分治疗" },
+    { "rank": 4, "name": "福乐", "score": 170, "change": -10, "detail": "表现不错" },
+    { "rank": 5, "name": "沈逸", "score": 170, "change": -20, "detail": "新手保护期" },
+    { "rank": 6, "name": "阿落", "score": 140, "change": -20, "detail": "中规中矩" },
+    { "rank": 7, "name": "牢A", "score": 150, "change": -30, "detail": "开始讲故事" },
+    { "rank": 8, "name": "林熊猫", "score": 160, "change": -40, "detail": "初期还行" }
+  ]
+}
